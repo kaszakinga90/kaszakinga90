@@ -7,7 +7,7 @@ public class FirstClass {
     private String author;
     private String title;
 
-    public Book(String author, String title) {
+    public FirstClass(String author, String title) {
         this.author = author;
         this.title = title;
     }
@@ -42,7 +42,6 @@ public class FirstClass {
                 '}';
     }
 
-    System.out.println("tekst");
 }
 
 

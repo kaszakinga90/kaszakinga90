@@ -14,8 +14,12 @@ public class KodillaCourseApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(KodillaCourseApplication.class, args);
+
+        LinkedList<Book> theList = new LinkedList<Book>();
+
+        System.out.println(theList.size());
+
     }
 
-    LinkedList<Book> theList = new LinkedList<Book>();
 
-    System.out.println(theList.size());
+}
