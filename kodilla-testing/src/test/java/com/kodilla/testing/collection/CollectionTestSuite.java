@@ -6,6 +6,8 @@ import java.lang.*;
 
 
 public class CollectionTestSuite {
+    private ArrayList<Integer> anotherList = new ArrayList<>();
+
     @Before
     public void before(){
         System.out.println("Test Status: begin");
@@ -19,17 +21,19 @@ public class CollectionTestSuite {
     @Test
     public void testOddNumbersExterminatorNormalList(){
         //Given
-        ArrayList<Integer> myArrayList = new ArrayList<Integer>();
+        ArrayList<Integer> numbers = new ArrayList<>();
         Random theGenerator = new Random();
         for(int i=0; i<400; i++) {
-            myArrayList.add(theGenerator.nextInt(100));
-        };
+            numbers.add(theGenerator.nextInt(100));
+        }
         OddNumbersExterminator oddArray = new OddNumbersExterminator();
         //When
-        Integer result = oddArray.exterminate();
+        Integer result = oddArray.exterminate(numbers);
         System.out.println("Testing " + result);
         //Then
-        Assert.assertEquals(ArrayList<Integer> numbers, result);
+        Assert.assertEquals(ArrayList<Integer> anotherList, result);
+
+
     }
 
 }

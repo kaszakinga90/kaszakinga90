@@ -1,7 +1,12 @@
 package com.kodilla.testing.collection;
 
+import java.util.ArrayList;
+
 public class OddNumbersExterminator {
-    public void exterminate(ArrayList<Integer> numbers){
+
+    private ArrayList<Integer> numbers = new ArrayList<>();
+
+    public int exterminate(ArrayList<Integer> numbers){
         int temporaryValue = 0;
         for(int i=0; i<numbers.size(); i++){
             temporaryValue = numbers.get(i);
@@ -10,5 +15,6 @@ public class OddNumbersExterminator {
                 System.out.println(temporaryValue);
             }
         }
+        return numbers.size();
     }
 }
