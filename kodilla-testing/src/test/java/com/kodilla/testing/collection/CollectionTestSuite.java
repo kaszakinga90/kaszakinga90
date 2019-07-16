@@ -21,16 +21,19 @@ public class CollectionTestSuite {
     public void testOddNumbersExterminatorNormalList(){
         //Given
         ArrayList<Integer> numbers = new ArrayList<>();
-        Random theGenerator = new Random();
-        for(int i=0; i<10; i++) {
-            numbers.add(theGenerator.nextInt(20));
-        }
+
+        numbers.add(2);
+        numbers.add(3);
+        numbers.add(4);
+
+        numbers.size();
+
         OddNumbersExterminator oddArray = new OddNumbersExterminator();
         //When
-        Integer result = oddArray.exterminate(numbers);
+        List<Integer> result = oddArray.exterminate(numbers);
         System.out.println("Testing " + result);
         //Then
-        Assert.assertEquals(anotherList, result);
+        Assert.assertEquals(result, numbers);
 
     }
 
