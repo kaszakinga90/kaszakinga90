@@ -30,7 +30,7 @@ public class ShapeCollectorTestSuite {
     }
 
     //testy sprawdzające metody klasy ShapeCollector
-/*
+
     @Test
     public void testAddFigure() {
         //Given
@@ -43,7 +43,58 @@ public class ShapeCollectorTestSuite {
         //Then
         Assert.assertEquals(circle, collector.getShapeName());
     }
-*/
+
+    @Test
+    public void testRemoveFigure() {
+        //Given
+        ArrayList<Shape> figures = new ArrayList<>();
+        ShapeCollector collector = new ShapeCollector();
+        collector.addFigure(circle);
+        collector.addFigure(square);
+        collector.addFigure(triangle);
+
+        //When
+        List<String> result = collector.remove(circle);
+        System.out.println("Testing " + result);
+
+        //Then
+        Assert.assertEquals(result, figures);
+    }
+
+    @Test
+    public void testGetFigure() {
+        //Given
+        ArrayList<Shape> figures = new ArrayList<>();
+        ShapeCollector collector = new ShapeCollector();
+        collector.addFigure(circle);
+        collector.addFigure(square);
+        collector.addFigure(triangle);
+
+        //When
+        List<String> result = collector.get(1);
+        System.out.println("Testing " + result);
+
+        //Then
+        Assert.assertEquals(result, figures.get(1));
+    }
+
+    @Test
+    public void testShowFigures() {
+        //Given
+        ArrayList<Shape> figures = new ArrayList<>();
+        ShapeCollector collector = new ShapeCollector();
+        collector.addFigure(circle);
+        collector.addFigure(square);
+        collector.addFigure(triangle);
+
+        //When
+        int result = figures.size();
+        System.out.println("Testing " + result);
+
+        //Then
+        Assert.assertEquals(result, figures.size());
+    }
+
 
 
 }
