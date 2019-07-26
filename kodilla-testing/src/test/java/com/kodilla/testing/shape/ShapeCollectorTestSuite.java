@@ -30,6 +30,7 @@ public class ShapeCollectorTestSuite {
     }
 
     //testy sprawdzające metody klasy ShapeCollector
+    /*
 
     @Test
     public void testAddFigure() {
@@ -95,6 +96,6 @@ public class ShapeCollectorTestSuite {
         Assert.assertEquals(result, figures.size());
     }
 
-
+*/
 
 }

@@ -5,8 +5,6 @@ import java.lang.*;
 
 
 public class CollectionTestSuite {
-    private ArrayList<Integer> anotherList = new ArrayList<>();
-
 
     @Before
     public void before(){
