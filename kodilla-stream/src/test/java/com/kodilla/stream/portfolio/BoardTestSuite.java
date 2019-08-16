@@ -139,4 +139,31 @@ public class BoardTestSuite {
         Assert.assertEquals(2, longTasks);
     }
 
+    @Test
+    public void testAddTaskListAverageWorkingOnTask() {
+        //Given
+        Board project = prepareTestData();
+
+        //When
+        List<TaskList> inProgressTask = new ArrayList<>();
+        inProgressTask.add(new TaskList("In progress"));
+        int daysSum = project.getTaskLists().stream()
+                .filter(inProgressTask::contains)
+                .flatMap(tl -> tl.getTasks().stream())
+                .map(task -> Period.between(task.getCreated(), LocalDate.now()).getDays())
+                .reduce(0, (sum, current) -> sum+=current);
+
+        int numbersOfTasks = project.getTaskLists().stream()
+                .filter(inProgressTask::contains)
+                .flatMap(tl -> tl.getTasks().stream())
+                .map(task -> Period.between(task.getCreated(), LocalDate.now()).getDays())
+                .reduce(0, (sum, current) -> sum+=current);
+
+        double average = daysSum/numbersOfTasks;
+
+        //Then
+        Assert.assertEquals(1.0, average, 0.001);
+
+    }
+
 }
