@@ -2,7 +2,8 @@ package com.kodilla.stream.portfolio;
 
 import java.time.LocalDate;
 
-public class Task {
+public final class Task {
+
     private final String title;
     private final String description;
     private final User assignedUser;

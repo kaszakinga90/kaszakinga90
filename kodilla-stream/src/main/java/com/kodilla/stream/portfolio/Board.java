@@ -4,19 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public final class Board {
+
     private final List<TaskList> taskLists = new ArrayList<>();
     private final String name;
 
     public Board(final String name) {
         this.name = name;
-    }
-
-    public void addTaskList(TaskList taskList) {
-        taskLists.add(taskList);
-    }
-
-    public boolean removeTaskList(TaskList taskList) {
-        return taskLists.remove(taskList);
     }
 
     public List<TaskList> getTaskLists() {
@@ -27,6 +20,14 @@ public final class Board {
         return name;
     }
 
+    public void addTaskList(TaskList taskList) {
+        taskLists.add(taskList);
+    }
+
+    public boolean removeTaskList(TaskList taskList) {
+        return taskLists.remove(taskList);
+    }
+
     @Override
     public String toString() {
         return "Board{" +
@@ -34,4 +35,5 @@ public final class Board {
                 ", name='" + name + '\'' +
                 '}';
     }
+
 }
