@@ -32,4 +32,16 @@ public class SearchFlight {
 
         return airportData;
     }
+
+    public static void main(String[] args) {
+        SearchFlight flightSearcher = new SearchFlight();
+
+        try {
+            flightSearcher.findFlight(new Flight("New Delhi", "Oslo"));
+        } catch (RouteNotFoundException e) {
+            System.out.println("Error: " + e.getMessage());
+        } finally {
+            System.out.println("Flight searcher");
+        }
+    }
 }
