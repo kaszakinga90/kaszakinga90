@@ -18,12 +18,13 @@ public class TaskListDaoTestSuite {
     @Autowired
     private TaskListDao taskListDao;
     private static final String DONE = "Done list";
+    private static final String DESCRIPTION = "List with done tasks";
 
     @Test
     public void testFindByListName() {
 
         //Given
-        TaskList taskList = new TaskList(DONE, "List with done tasks");
+        TaskList taskList = new TaskList(DONE, DESCRIPTION);
         taskListDao.save(taskList);
 
         //When
