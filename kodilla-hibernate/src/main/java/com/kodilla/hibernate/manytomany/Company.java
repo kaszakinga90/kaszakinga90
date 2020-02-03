@@ -16,6 +16,11 @@ import java.util.List;
                 "WHERE LEFT(company_name, 3) = :BEGINWITH",
         resultClass = Company.class)
 
+@NamedQuery(
+        name = "Company.companyByArg",
+        query = "FROM Company WHERE name LIKE CONCAT(\'%\', :COMPANY_NAME, \'%\')"
+)
+
 @Entity
 @Table(name = "COMPANIES")
 public class Company {
